@@ -25,6 +25,7 @@
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>MyAI</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>7.0</WindowsTargetPlatformMinVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -126,12 +127,28 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Database.h" />
+    <ClInclude Include="Layer.h" />
+    <ClInclude Include="Network.h" />
+    <ClInclude Include="NeuronReLU.h" />
+    <ClInclude Include="NeuronSigmoidalUnipolar.h" />
+    <ClInclude Include="NeuronSoftMax.h" />
+    <ClInclude Include="NewLayerTemplate.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Neuron.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="Database.cpp" />
+    <ClCompile Include="Layer.cpp" />
     <ClCompile Include="MyAI.cpp" />
+    <ClCompile Include="Network.cpp" />
+    <ClCompile Include="Neuron.cpp" />
+    <ClCompile Include="NeuronReLU.cpp" />
+    <ClCompile Include="NeuronSigmoidalUnipolar.cpp" />
+    <ClCompile Include="NeuronSoftMax.cpp" />
+    <ClCompile Include="NewLayerTemplate.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -143,8 +160,14 @@
     <Image Include="app.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>MySql\lib\net48\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>System.Runtime.CompilerServices.Unsafe\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
