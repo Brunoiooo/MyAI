@@ -30,8 +30,6 @@ public:
 	void DeleteNetwork(int networkId);
 
 private:
-	//void CreateSchema(String^ schema);
-
 	int GetLastId();
 
 	int InsertNetwork(String^ name);
